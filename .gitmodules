@@ -1,0 +1,6 @@
+[submodule "toolchains/clang-r383902"]
+	path = toolchains/clang-r383902
+	url = https://github.com/Mizumo-prjkt/clang-r383902
+[submodule "toolchains/aarch64-linux-android-4.9-llvm"]
+	path = toolchains/aarch64-linux-android-4.9-llvm
+	url = https://github.com/Mizumo-prjkt/aarch64-linux-android-4.9-llvm
