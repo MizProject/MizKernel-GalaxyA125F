@@ -4,6 +4,11 @@ export KBUILD_BUILD_USER="Mizumo_prjkt"
 
 git submodule init && git submodule update
 
+# # KCONFIG TELL
+# # TELL THE HELL ON THE MAKE THAT THE a12_mizkernel_defconfig is in arch/arm64/config
+# export KCONFIG_CONFIG="arch/arm64/config/a12_mizkernel_defconfig"
+
+
 
 START_BUILD_TIME_RAW=$(TZ="Asia/Manila" date +%T)
 START_BUILD_DATE_RAW=$(TZ="Asia/Manila" date +%F)
@@ -20,8 +25,8 @@ export ANDROID_MAJOR_VERSION=r
 export KCFLAGS=-w
 export CONFIG_SECTION_MISMATCH_WARN_ONLY=y
 
-make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y a12_mizkernel_defconfig
-make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y -j64
+make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y ARCH=arm64 a12_mizkernel_defconfig
+make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y ARCH=arm64 -j64
 
 cp out/arch/arm64/boot/Image $(pwd)/arch/arm64/boot/Image
 
