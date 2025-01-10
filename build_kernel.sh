@@ -2,6 +2,7 @@
 
 export KBUILD_BUILD_USER="Mizumo_prjkt"
 
+# Let submodules do the things now
 git submodule init && git submodule update
 
 # # KCONFIG TELL
